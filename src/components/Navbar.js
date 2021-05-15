@@ -6,7 +6,7 @@ const Navbar = () => {
         <>
             <div className="container-fluid-nav_bg">
                 <div className='row'>
-                    <div className="col-10-mx-auto">
+                    <div className="col-10 mx-auto">
                         <nav className="navbar navbar-expand-lg navbar-light bg-light">
                             <div className="container-fluid">
                                 <NavLink  className="navbar-brand" to="/">
@@ -32,7 +32,13 @@ const Navbar = () => {
                                         <li className="nav-item">
                                             <NavLink activeClassName='menu-active'
                                             exact
-                                            className="nav-link" to="/service">Servises</NavLink>
+                                            className="nav-link" to="/service">Services</NavLink>
+                                        </li>
+
+                                        <li className="nav-item">
+                                            <NavLink activeClassName='menu-active'
+                                            exact
+                                            className="nav-link" to="/hiringpartners">Hiring-partners</NavLink>
                                         </li>
 
                                         <li className="nav-item">

@@ -8,16 +8,16 @@ const Contact = () => {
        email: "",
        msg: "",
   });
-  // const InputEvent = (event) => {
-  //   const {name, value} = event.target;
+  const InputEvent = (event) => {
+    const {name, value} = event.target;
     
-  //   setData((preVal) =>{
-  //     return {
-  //       ...preVal,
-  //       [name]: value,
-  //     };
-  //   });
-  // } ;
+    setData((preVal) =>{
+      return {
+        ...preVal,
+        [name]: value,
+      };
+    });
+  } ;
     
 const formsubmit = (e) => {
      e.preventDefault();
