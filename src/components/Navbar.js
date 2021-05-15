@@ -1,85 +1,56 @@
-  import { Button } from 'bootstrap';
-import React, { useState, useEffect } from 'react';
-  import { Link } from 'react-router-dom';
-  import '../components/Navbar.css';  
-  import Profile from '../components/profile';
+import React from 'react';
+import {NavLink} from "react-router-dom";
 
-  function Navbar() {
-      const {click, setClick} = useState(false); 
-    const [button, setButton] = useState(true);
+const Navbar = () => {
+    return (
+        <>
+            <div className="container-fluid-nav_bg">
+                <div className='row'>
+                    <div className="col-10-mx-auto">
+                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                            <div className="container-fluid">
+                                <NavLink  className="navbar-brand" to="/">
+                                    Sunstone Eduversity
+                                    </NavLink>
+                                <button
+                                className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+                                        <li className="nav-item">
+                                            <NavLink activeClassName='menu-active' 
+                                            exact
+                                            className="nav-link active" aria-current="page" to="/">Home</NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink activeClassName='menu-active'
+                                            exact
+                                            className="nav-link" to="/about">About</NavLink>
+                                        </li>
 
-      const handleClick = () => setClick(!click);
-      const closeMobileMenu = () => setClick(false);
+                                        <li className="nav-item">
+                                            <NavLink activeClassName='menu-active'
+                                            exact
+                                            className="nav-link" to="/service">Servises</NavLink>
+                                        </li>
 
-      const showButton = () => {
-          if (window.innerWidth <= 960) {
-              setButton(false);
-          } else {
-              setButton(true);
-          }
-      };
-
-      useEffect(() => {
-        showButton();
-      }, []);
-
-      window.addEventListener('resize', showButton);
-
-      return (
-          <>
-           <nav className='navbar'>
-            <div className='navbar-container'>
-              <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                  SUNSTONE EDUVERSITY <i className='fab fa-typo3' />
-              </Link>
-             <div className='menu-icon' onClick={handleClick}>
-               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />     
-             </div>
-             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                 <li className='nav-item'>
-                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                      Programs
-                  </Link>
-                 </li>
-                 <li className='nav-item'>
-                  <Link to='/campuses' className='nav-links' onClick={closeMobileMenu}>
-                      Campuses
-                  </Link>
-                 </li>
-                 <li className='nav-item'>
-                  <Link to='/fee-structure' className='nav-links' onClick={closeMobileMenu}>
-                     Fee Structure 
-                  </Link>
-                 </li>
-                 <li className='nav-item'>
-                  <Link to='/hire-from-sunstone' className='nav-links' onClick={closeMobileMenu}>
-                      Hire From Sunstone 
-                  </Link>
-                 </li>
-                 <li className='nav-item'>
-                  <Link to='/faculty' className='nav-links' onClick={closeMobileMenu}>
-                      Faculty
-                  </Link>
-                 </li>
-                 <li className='nav-item'>
-                  <Link to='/about-us' className='nav-links' onClick={closeMobileMenu}>
-                      About Us
-                  </Link>
-                 </li>
-                 <li>
-                  <Link to='/apply-now' className='nav-links-mobile' onClick={closeMobileMenu}>
-                      Apply Now
-                  </Link>
-                 </li>
-                 </ul>
-                 {button && <Button buttonStyle='btn--outline'>Apply Now</Button>}
+                                        <li className="nav-item">
+                                            <NavLink activeClassName='menu-active'
+                                            exact
+                                            className="nav-link" to="/contact">Contact</NavLink>
+                                        </li>
+                                      
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-           </nav>
-          </>
-      );
-  }
-  
-  export default Navbar;
-  
+            </div>
+        </>
+    );
+};
 
-            
+export default Navbar;

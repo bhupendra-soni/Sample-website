@@ -1,46 +1,29 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Test from './components/Slide';
-import Footer from './components/Footer'; 
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Service from "./Service";
+import Navbar from "./components/Navbar";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Footer from "./components/Footer";
 
-
-// import {Dropdown,Button} from 'react-bootstrap'
-
-function App() {
+const App = () => {
   return (
-    
+
     <>
-    <div>
-      
-      <Test />
-      <Footer />
-    </div>
-    {/* <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-    <Button variant="primary" size="sm">
-      Small button
-    </Button>
-    <Button variant="success">Success</Button>
-  </Dropdown.Menu>
-</Dropdown> */}
-
-      {/* <Router>
-      <Navbar />
-      <Switch>
-        <Route path='/' exact component= {HTMLFormElement} /> 
-      </Switch>
-      </Router> */}
-      </>
-  );
-}
+    <Navbar />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/service" component={Service} />
+      <Route exact path="/contact" component={Contact} />
+      <Redirect to="/" />
+    </Switch>
+    <Footer />
+     </>
+   );
+};
 
 export default App;
