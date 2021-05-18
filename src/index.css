@@ -110,3 +110,30 @@
         transform: translateY(-10px);
     }
 }
+
+.Companycard {
+    overflow: hidden;
+}
+
+.Companycard img{
+    transition: all 1.2s ease;
+}
+
+.Companycard:hover img {
+    transform: scale(1.2);
+}
+
+.card {
+    overflow: hidden;
+}
+
+.card img{
+    transition: all 1.2s ease;
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+
+

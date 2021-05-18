@@ -5,6 +5,7 @@ import Companycard from "./Companycard";
 const HiringPartners = () => {
     return (
         <>
+        <div style={{backgroundImage: `url("https://wallpapercave.com/wp/wp2752752.jpg")`}}>
            <div className="my-5">
                <h1 className="text-center">Our Recruters</h1>
            <div className="container-fluid mb-5">
@@ -14,6 +15,7 @@ const HiringPartners = () => {
                      {Tdata.map((val, ind) =>{
                          return <Companycard key={ind} imgsrc={val.imgsrc} />
                      })}
+                     </div>
                      </div>
                  </div>
              </div>

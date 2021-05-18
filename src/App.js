@@ -11,6 +11,7 @@ import { Switch, Route, Redirect, Router, BrowserRouter } from "react-router-dom
 import Footer from "./components/Footer";
 import Web from "./components/images/img-8.jpg";
 import Common from "./Common"
+import Grid from "./Grid";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
     </>
     {/* <Common name="Welcome to About page" imgsrc={Web} visit="/contact" btname="Contact Now" />  */}
     {/* <Footer /> */}
+    {/* <Grid /> */}
     </BrowserRouter>
    );
 };
